@@ -18,7 +18,7 @@ body {
   background-position: left bottom 50%;
   background-size: 120%;
   max-width: 100%;
-  height: auto;
+  height: 40%;
   border-radius: 0 0 0 60px;
   margin-bottom: 15px;
   z-index: 1;
@@ -46,7 +46,7 @@ body {
   padding-top: 20px;
 }
 .nav-links {
-  width: 60%;
+  width: 70%;
   display: flex;
   justify-content: space-evenly;
   padding: 15px;
@@ -72,15 +72,16 @@ body {
 }
 .dropdown-content {
   display: none;
-  /* position: absolute;
-  left: -15px; */
+  position: absolute;
+  content: '';
+  left: -12px;
   padding: 12px;
-  width: 110px;
+  width: 100px;
   margin-top: 5px;
   background-color: hsl(0, 0%, 100%);
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  transition: all 5s ease-in-out;
+  text-align: start;
 }
 .arrow {
   padding-left: 8px;
@@ -326,7 +327,7 @@ body {
   border-bottom: 1px solid hsl(240, 2%, 79%);
 }
 /* ============================================= Media query for mobile screens =========================================================== */
-@media only screen and (min-width: 375px) and (max-width: 480px) {
+@media only screen and (min-width: 375px) and (max-width: 780px) {
   .wrapper {
     overflow: hidden;
   }.header {
@@ -335,6 +336,7 @@ body {
     background-repeat: no-repeat;
     background-position: 55% 20%;
     background-size: 170%;
+    position: relative;
   }
   .mobile-menus {
     width: 90%;
@@ -365,9 +367,12 @@ body {
   }
   .dropdown-content {
     width: 80%;
+    left: 10%;
     margin: 0 auto;
-    background-color: rgba(180, 180, 180, 0.582);
+    background-color: rgba(180, 180, 180, 0.493);
     box-shadow: none;
+    position: absolute;
+    z-index: 100;
   }
   .dropdown-content a {
     width: 60%;
