@@ -76,23 +76,41 @@ function handleDropdownClick(e) {
   }
 }
 
-
-
-window.addEventListener("resize", function () {
-  // Get the window width
-  const windowWidth = window.innerWidth;
-
-  // Add your specific logic based on the window width
-  if (windowWidth <= 780) {
-    dropdowns.forEach((item) => {
-      item.addEventListener("click", handleDropdownClick);
-    });
-  } else {
-    dropdown.forEach(item => {
-        item.addEventListener("click", handleDropdownToggle)
-    })
+function handleDropdownsBasedOnWindowSize() {
+    const windowWidth = window.innerWidth;
+  
+    if (windowWidth <= 780) {
+      dropdowns.forEach(item => {
+        item.addEventListener("click", handleDropdownClick);
+      });
+    } else {
+      dropdown.forEach(item => {
+        item.addEventListener("click", handleDropdownToggle);
+      });
+    }
   }
-});
+  
+  // Call the function on page load
+  handleDropdownsBasedOnWindowSize();
+  
+  // Add a listener for changes in the window size
+  window.addEventListener("resize", handleDropdownsBasedOnWindowSize);
+
+// window.addEventListener("resize", function () {
+//   // Get the window width
+//   const windowWidth = window.innerWidth;
+
+//   // Add your specific logic based on the window width
+//   if (windowWidth <= 780) {
+//     dropdowns.forEach((item) => {
+//       item.addEventListener("click", handleDropdownClick);
+//     });
+//   } else {
+//     dropdown.forEach(item => {
+//         item.addEventListener("click", handleDropdownToggle)
+//     })
+//   }
+// });
 
 // Hambuger animation
 icon.addEventListener("click", () => {
